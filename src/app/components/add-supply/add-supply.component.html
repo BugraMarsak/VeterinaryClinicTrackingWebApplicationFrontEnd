@@ -1,0 +1,61 @@
+<div class="pt-4 pb-4">
+    <div class="container">
+        
+
+        <div class="d-none d-md-block  ">
+            <form [formGroup]="addlgForm">
+        
+                <table class="table table-secondary table-hover ">
+
+                        <thead>
+                        <tr>
+                            <th scope="col">Product name</th>
+                            <th scope="col">Unit in Stock</th>
+                            <th scope="col">Purchase date</th>
+                            <th scope="col">Purchase Price($)</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="email" class="form-control rounded-4" formControlName="productName" id="productName" placeholder=""></td>
+                                <td><input type="email" class="form-control rounded-4" formControlName="unitInStock" id="unitInStock" placeholder=""></td>
+                                <td><input class="bd" type="date" formControlName="purchaseDate" id="purchaseDate"></td>
+                                <td><input type="email" class="form-control rounded-4" formControlName="purchasePrice" id="purchasePrice" placeholder=""></td>    
+                            </tr>
+                </table>
+            </form>
+            <a  type="submit" (click)="addlg()" class="btn btn-outline-primary centered">Submit</a>
+        </div>
+    
+
+        <div class="row d-block d-md-none ">
+            <form [formGroup]="addForm">
+
+            
+                <div class="pb-2">
+                    <label for="">Product name</label>
+                    <input type="email" class="form-control rounded-4" formControlName="productName" id="productName" placeholder="">
+                </div>
+                <div class="pb-2">
+                    <label for="">Unit in Stock</label>
+                    <input type="email" class="form-control rounded-4" formControlName="unitInStock" id="unitInStock" placeholder="">
+                </div>
+                <div class="pb-2">
+                    <div>
+                        <label for="">Purchase date</label>
+
+                    </div>
+                    <div>
+                        <input class="bd" type="date" formControlName="purchaseDate" id="purchaseDate">
+                    </div>  
+                </div>
+                <div class="pb-2">
+                    <label for="">Purchase Price($) </label>
+                    <input type="email" class="form-control rounded-4" formControlName="purchasePrice" id="purchasePrice" placeholder="example:6.6">
+                </div>
+            </form>
+            <a  type="submit" (click)="add()" class="btn btn-outline-primary centered">Submit</a>
+        </div>
+
+    </div>
+</div>

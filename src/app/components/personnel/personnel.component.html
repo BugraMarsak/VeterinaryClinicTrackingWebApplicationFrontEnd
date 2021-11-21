@@ -1,0 +1,31 @@
+<div class="album pt-4 bp-8">
+    <div class="container">
+        <!-- 
+            <div class="row py-4">
+                <div class="card col-lg-3 my-2 mx-1" *ngFor="let personnel of personnels">
+                    <img src="{{personnel.personnelPhoto}}" class="card-img-top">
+                    <div class="card-body">
+                    <h5 class="card-title">{{personnel.personnelFullName}}</h5>
+                    <p class="card-text">{{personnel.personnelMail}}</p>
+                    </div>
+                </div>
+                
+        
+            </div> -->
+            
+        
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <div class="col" *ngFor="let personnel of personnels">
+                  <div class="card shadow-sm">
+                    <img src="{{personnel.personnelPhoto}}" class="card-img-top img-centered">
+
+                    <div class="card-body">
+                      <p class="card-text p-centered">{{personnel.personnelFullName}} <br>{{personnel.personnelMail}}  </p>
+                    </div>
+                  </div>
+                </div>
+                
+                
+              </div>
+        </div>
+</div>

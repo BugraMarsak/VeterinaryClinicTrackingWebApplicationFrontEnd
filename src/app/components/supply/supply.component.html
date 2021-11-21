@@ -1,0 +1,24 @@
+<div class="pt-4 pb-2">
+    <div class="container" >
+        <table class="table table-secondary table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Product name</th>
+                <th scope="col">Unit in Stock</th>
+                <th scope="col">Purchase date</th>
+                <th scope="col">Purchase Price</th>
+                <th scope="col">Changes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let supply of supplies">
+                <th scope="row">{{supply.productName}}</th>
+                <td>{{supply.unitInStock}}</td>
+                <td>{{supply.purchaseDate}}</td>
+                <td>{{supply.purchasePrice}}</td>
+                <td><svg xmlns="http://www.w3.org/2000/svg" (click)="delete(supply)" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-delete"><path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/><line x1="18" y1="9" x2="12" y2="15"/><line x1="12" y1="9" x2="18" y2="15"/></svg></td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
