@@ -1,15 +1,50 @@
-<div class="container pt-4 pb-4">
-
-    <div class="row">
-        <div class="col">
-            <label>Owner FirstName</label>
-          <input type="text" class="form-control" placeholder="First name" aria-label="First name">
-        </div>
-        <div class="col">
-            <label>Owner LastName</label>
-          <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
-        </div>
+<div class="modal modal-signin position-static d-block bg-secondary for-padding  " tabindex="-1" role="dialog" id="modalSignin">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content rounded-5 shadow mt">
+      <div class="modal-header p-5 pb-4 border-bottom-0 ">
+        <h2 class="fw-bold mb-0">Make a appointment</h2>
       </div>
 
-    
+      <div class="modal-body p-5 pt-0">
+        <form [formGroup]="appointmentForm">
+          
+           <div class="form-floating mb-3">
+            <h4>animal:</h4>
+            <select formControlName="animalId" name="animalId" id="animalId" class="cselect">
+              <option class="coption" *ngFor="let animal of animals" value="{{animal.animalId}}">{{animal.animalName}}</option>
+            </select>
+          </div>
+          
+          <div class="form-floating mb-3 mt-4">
+            <h4>Appointment type:</h4>
+              <select formControlName="appointmentType" name="appointmentType" id="appointmentType" class="cselect">
+                <option class="coption" *ngFor="let appointmentType of appointmentTypes"  value="{{appointmentType.typeName}}">{{appointmentType.typeName}}</option>
+              </select>
+          </div>
+          <div class="form-floating mb-3 mt-4">
+            <h4>Day:</h4>
+            <input class="bd" type="Date" (change)="ds()" formControlName="appointmentTime" id="appointmentTime">
+          </div>
+          
+          
+        </form>
+        <div class="mt-4" *ngIf="check()">
+          <h4>Hour:</h4>
+        <select  class="c1select" [(ngModel)]="test" name="" id="">
+          <option value="{{hour}}" *ngFor="let hour of hours">{{hour}}</option>
+        </select>
+        </div>
+        <div class="mt-2" *ngIf="check2()">
+          <h4>Minute:</h4>
+          <select class="c1select" [(ngModel)]="min" name="" id="">
+            <option value="0">00</option>
+            <option value="20">20</option>
+            <option value="40">40</option>
+          </select>
+        </div>
+        
+        <a (click)="add()" class="w-100 mb-2 btn btn-lg rounded-4 btn-primary">make appointment</a>
+      </div>
+    </div>
+  </div>
 </div>

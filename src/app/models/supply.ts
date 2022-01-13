@@ -4,4 +4,5 @@ export interface Supply{
     unitInStock:number;
     purchaseDate:Date;
     purchasePrice:string;
+    userName:string;
 }

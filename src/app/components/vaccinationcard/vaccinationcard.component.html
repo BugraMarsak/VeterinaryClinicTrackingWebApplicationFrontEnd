@@ -1,20 +1,20 @@
 <div class="padding ">
-    <div class="container">
+    <div class="container" >
         <div class="" >
             <h3 class="col-lg-3 col-md-12 "> Animal Id : {{animalId}} </h3>
         </div>
         <div class="my-3">
           <a href="/vaccinatincard" type="button" class="btn btn-outline-primary col-lg-2 col-md-12 ">Back to Search</a>
-          <a href="" type="button" class="btn btn-outline-primary col-lg-2 offset-lg-1 col-md-12 ">Add</a>
+          <a href="add/vaccinatincard/{{animalId}}" type="button" class="btn btn-outline-primary col-lg-2 offset-lg-1 col-md-12 ">Add</a>
         </div>
         
-        <table class="table table-secondary table-hover  forcenter ">
+        <table  class="table table-secondary table-hover  forcenter col-sm-12  " >
             <thead>
               <tr>
                 <th class="thdw" >Vaccination name</th>
                 <th class="thdw" >Animal Name</th>
                 <th class="thdw">Vaccinated</th>
-
+                <th class="thdw">Edit</th>
               </tr>
             </thead>
             <tbody>
@@ -28,9 +28,12 @@
                   <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
                   <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
                 </svg></td>
+                <td class="thdw"><a  href="edit/vaccinatincard/{{vaccinationCard.vaccinationCardId}}"><svg xmlns="http://www.w3.org/2000/svg" class="me-4" viewBox="0 0 24 24" width="15" height="15"><path d="M22.853,1.148a3.626,3.626,0,0,0-5.124,0L1.465,17.412A4.968,4.968,0,0,0,0,20.947V23a1,1,0,0,0,1,1H3.053a4.966,4.966,0,0,0,3.535-1.464L22.853,6.271A3.626,3.626,0,0,0,22.853,1.148ZM5.174,21.122A3.022,3.022,0,0,1,3.053,22H2V20.947a2.98,2.98,0,0,1,.879-2.121L15.222,6.483l2.3,2.3ZM21.438,4.857,18.932,7.364l-2.3-2.295,2.507-2.507a1.623,1.623,0,1,1,2.295,2.3Z"/></svg></a>
+                  <svg xmlns="http://www.w3.org/2000/svg" (click)="delete(vaccinationCard)" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-delete"><path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/><line x1="18" y1="9" x2="12" y2="15"/><line x1="12" y1="9" x2="18" y2="15"/></svg></td>
               </tr>
         </table>
         <h1 ></h1>
     </div>
 </div>
+
 

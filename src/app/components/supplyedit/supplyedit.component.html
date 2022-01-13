@@ -1,0 +1,32 @@
+<div class="pt-4 pb-4">
+    <div class="container mt">
+        
+        <div class="table-responsive">
+            <form [formGroup]="addlgForm">
+        
+                <table class="table table-secondary table-hover ">
+
+                        <thead>
+                        <tr>
+                            <th scope="col">Product name</th>
+                            <th scope="col">Unit in Stock</th>
+                            <th scope="col">Purchase date</th>
+                            <th scope="col">Purchase Price($)</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="text" class="form-control rounded-4" formControlName="productName" id="productName" placeholder=""></td>
+                                <td><input type="text" class="form-control rounded-4" formControlName="unitInStock" id="unitInStock" placeholder=""></td>
+                                <td><input class="bd" type="date" formControlName="purchaseDate" id="purchaseDate"></td>
+                                <td><input type="text" class="form-control rounded-4" formControlName="purchasePrice" id="purchasePrice" placeholder=""></td>    
+                            </tr>
+                </table>
+            </form>
+            
+        </div>
+        <a  type="submit" (click)="addlg()" class="btn btn-outline-primary centered mt-4">Submit</a>
+
+  
+    </div>
+</div>

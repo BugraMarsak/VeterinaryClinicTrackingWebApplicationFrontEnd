@@ -1,0 +1,148 @@
+<div class="padding ">
+  <div class="container" >
+
+      <div class="container mt-5 mb-5">
+       <h3>Animal Id: {{animalInfo.animalId}}</h3> 
+        <div class="row no-gutters">
+          
+            <div class="col-md-4 col-lg-4"><img src="{{animalInfo.animalPhoto}}"></div>
+            <div class="col-md-8 col-lg-8">
+                <div class="d-flex flex-column">
+                    <div class="d-flex row justify-content-between forcenter p-5 bg-dark text-white">
+                        <h3 class="display-5 forcenter">{{animalInfo.animalName}} </h3>
+                    </div>
+                    <div class="p-3 bg-black text-white row forcenter">
+                        <h6>{{animalInfo.animalKind}} &amp; {{animalInfo.animalRace}}</h6>
+                    </div>
+                    <div class="d-flex row text-white">
+                        <div class="p-4 bg-secondary text-center col-lg-3 ">
+                            <h4>Color</h4>
+                            <h6>{{animalInfo.animalColor}}</h6>
+                        </div>
+                        <div class="p-3 bg-secondary text-center col-lg-3">
+                            <h4>Neutured</h4>
+                            <h6>{{animalInfo.neutered}}</h6>
+                        </div>
+                        <div class="p-3 bg-secondary text-center col-lg-3">
+                            <h4>Gender</h4>
+                            <h6>{{animalInfo.gender}}</h6>
+                        </div>
+                        <div class="p-3 bg-secondary text-center col-lg-3">
+                            <h4>Birthday</h4>
+                            <h6>{{animalInfo.birthDay}}</h6>
+                        </div>
+                        
+                    </div>
+                    <div class="p-3 bg-dark text-white row forcenter">
+                      <div class="row">
+                        
+                        <h6 class="col forcenter"><a class="btn text-white" href="update/animalinfo/{{animalInfo.animalId}}">Edit</a></h6>
+                        <h6 class="col forcenter"><a class="btn text-white" (click)="delete()" href="/user">Delete</a> </h6>
+                      </div>
+                      
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="mt-6">
+      
+      <div *ngIf="vaccheck()" class="mt-6">
+        <table  class="table table-secondary table-hover  forcenter col-sm-12  " >
+            <thead>
+              <tr>
+                <th class="thdw" >Vaccination name</th>
+                <th class="thdw" >Animal Name</th>
+                <th class="thdw">Vaccinated</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let vaccinationCard of vaccinationCards">
+                <td class="thdw">{{vaccinationCard.vaccinationName}}</td>
+                <td class="thdw">{{animalInfo.animalName}}</td>
+                <td *ngIf="vaccinationCard.vaccinated" class="thdw"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
+                  <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                </svg></td>
+                <td *ngIf="!vaccinationCard.vaccinated" class="thdw"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
+                  <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
+                </svg></td>
+              </tr>
+        </table>
+      </div>
+      <div *ngIf="!vaccheck()" class="forcenter mt-6">
+        <h3>No Vaccination information talk with your clinic</h3>
+      </div>
+      <hr class="mt-6"> 
+      
+      <div *ngIf="surCheck()" class="mt-6">
+        <table  class="table table-secondary table-hover  forcenter col-sm-12  " >
+          <thead>
+            <tr>
+              <th class="thdw" >Surgery Name</th>
+              <th class="thdw" >Animal Name</th>
+              <th class="thdw" >Time</th>
+              <th class="thdw" >Doctor Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let surgDone of surgDones">
+              <td class="thdw">{{surgDone.surgName}}</td>
+              <td class="thdw">{{animalInfo.animalName}}</td>
+              <td class="thdw">{{surgDone.surgTime}}</td>
+              <td class="thdw">{{surgDone.docName}}</td>
+            </tr>
+        </table>
+      </div>
+      <div *ngIf="!surCheck()" class="forcenter mt-6">
+        <h3>No Surgery information talk with your clinic</h3>
+      </div>
+
+      <hr class="mt-6"> 
+
+      <h1 class="forcenter mt-2">Animal's Appointments</h1>
+      <div *ngIf="appCheck()"  class="row gutters-sm mt-5">
+        <div   class="col-md-4" *ngFor="let appointment of appointments" >
+          <div class="card mb-3">
+            <div class="card-body bg bg-dark text-white">
+              <div class="row">
+                <div class="col-sm-4">
+                  <h6 class="mb-0">Time</h6>
+                </div>
+                <div class="col-sm-8 text-secondary">
+                  {{appointment.appointmentTime}}
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-4">
+                  <h6 class="mb-0">Animal Id</h6>
+                </div>
+                <div class="col-sm-8 text-secondary">
+                  {{appointment.animalId}}
+                </div>
+              </div>                  
+              <hr>
+              <div class="row">
+                <div class="col-sm-4">
+                  <h6 class="mb-0">Appoint. Type</h6>
+                </div>
+                <div class="col-sm-8 text-secondary">
+                  {{appointment.appointmentType}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+    
+
+      </div>
+      <div *ngIf="!appCheck()" class="forcenter mt-6">
+        <h3>No Appointment </h3>
+      </div>
+</div>
+
+

@@ -3,4 +3,7 @@ export interface RegisterModule{
     password: string;
     firstName: string;
     lastName: string;
+    phoneNumber: string;
+    address:string
+    photo:string
 }

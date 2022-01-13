@@ -13,12 +13,46 @@
           <li><a href="/contact" class="nav-link px-2 link-dark">Contact</a></li>
         </ul>
   
-        <div class="col-md-3 text-end">
+        <div *ngIf="!checklog()" class="col-md-3 text-end">
           <a href="/login" type="button" class="btn btn-outline-primary me-2">Login</a>
-          <button type="button" class="btn btn-primary">Sign-up</button>
+          <a href="/sign-up" type="button" class="btn btn-primary">Sign-up</a>
+        </div>
+        <div *ngIf="checklog()" class="col-md-3 text-end">
+          <div *ngIf="checkauth()" class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              {{getname()}}
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="/user">User Page</a></li>
+              <li><a class="dropdown-item" href="/vaccinatincard">Vaccination Search</a></li>
+              <li><a class="dropdown-item" href="add/vaccinatincard">Add Vaccination</a></li>
+              <li><a class="dropdown-item" href="/surgeries">Surgeries Search</a></li>
+              <li><a class="dropdown-item" href="add/surgeries">Add Surgery</a></li>
+              <li><a class="dropdown-item" href="/supply">Supply</a></li>
+              <li><a class="dropdown-item" href="/applist">Appointment List</a></li>
+              <li><a class="dropdown-item" (click)="exit()">Exit</a></li>
+              
+            </ul>
+          </div>
+          <div *ngIf="!checkauth()" class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              {{getname()}}
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="/user">User Page</a></li>
+              <li><a class="dropdown-item" (click)="exit()">Exit</a></li>
+              
+            </ul>
+          </div>
+
+
+            
+
         </div>
       </header>
     </div>
+
+    
   </nav>
 
 

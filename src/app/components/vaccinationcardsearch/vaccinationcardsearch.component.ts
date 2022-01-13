@@ -7,15 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VaccinationcardsearchComponent implements OnInit {
   animalId:number;
-  apiurl:string ="/vaccinatincard/"
-  result:string
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  go(){
-    console.log(this.animalId)
-
-  }
 }

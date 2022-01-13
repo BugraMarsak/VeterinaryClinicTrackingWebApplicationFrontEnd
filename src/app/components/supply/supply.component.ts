@@ -21,6 +21,10 @@ export class SupplyComponent implements OnInit {
       this.supplies = response.data
     })
   }
+  edit(supplyId:number){
+    var x:string =""+supplyId
+    localStorage.setItem("supplyId",x) 
+  }
 
   delete(supply:Supply){
     this.supplyService.delete(supply).subscribe(response =>{

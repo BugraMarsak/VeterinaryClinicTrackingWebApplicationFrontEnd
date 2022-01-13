@@ -1,0 +1,70 @@
+<div class="modal modal-signin position-static d-block bg-secondary for-padding  " tabindex="-1" role="dialog" id="modalSignin">
+    <div class="modal-dialog pt-3" role="document">
+      <div class="modal-content rounded-5 shadow ">
+        <div class="modal-header p-5 pb-4 border-bottom-0">
+          <h2 class="fw-bold mb-0">Update animal</h2>
+        </div>
+  
+        <div class="modal-body p-5 pt-0">
+          <form [formGroup]="addForm">
+            <div class="form-floating mb-3 mt-4">
+              <h5 class="col-lg-6">Animal Id:</h5>
+              <input formControlName="animalId" type="text" class="form-control rounded-4" id="animalId" placeholder="First Name">
+            </div>
+            <div class="form-floating mb-3 mt-4">
+              <h5 class="col-lg-6">Animal Name:</h5>
+              <input formControlName="animalName" type="text" class="form-control rounded-4" id="animalName" placeholder="Last Name">
+            </div>
+            <div  class="form-floating mb-4 mt-4">
+                <h5 class="col-lg-6">Animal Kind:</h5>
+                <select class="col-lg-3" formControlName="animalKind" class="cselect" (change)="getRaces()" name="animalKind" id="animalKind">
+                  <option *ngFor="let kind of kinds" value="{{kind.animalKindName}}">{{kind.animalKindName}}</option>
+                </select>
+            </div>
+            <div *ngIf="showRaceSelect()" class="form-floating mb-3 mt-4">
+              <h5 class="col-lg-6" >Animal Race:</h5>
+              <select class="col-lg-3" formControlName="animalRace" class="cselect"  name="animalRace" id="animalRace">
+                <option *ngFor="let race of races" value="{{race.raceName}}">{{race.raceName}}</option>
+              </select>
+            </div>
+            <div class="form-floating mb-3 mt-4">
+              <h5 class="col-lg-6">Neutered:</h5>
+                <select formControlName="neutered" name="neutered" id="neutered" class="cselect">
+                  <option value="false">Not neutered</option>
+                  <option value="true">Neutered</option>
+                </select>
+            </div>
+            <div class="form-floating mb-3 mt-4">
+              <h5 class="col-lg-6">Gender:</h5>
+                <select formControlName="gender" name="gender" id="gender" class="cselect">
+                  <option value="Female">Female</option>
+                  <option value="Male">Male</option>
+                </select>
+            </div>
+            <div class="form-floating mb-3 mt-4">
+                <div class="row">
+                  <h5 class="col-lg-5">Birthday:</h5>
+                  <input class="bd col-lg-6" type="date" formControlName="birthday" id="birthday">
+                </div>
+            </div>
+              
+            <div class="form-floating mb-3 mt-4">
+                <h5 class="">animal Color:</h5>
+                <input formControlName="animalColor" type="text" class="form-control rounded-4" id="" placeholder="Color">
+            </div>
+              
+            <div class="form-floating mb-3 mt-4">
+              <h5 class="">Animal Photo(Not necessary):</h5>
+              <input formControlName="animalPhoto" type="text" class="form-control rounded-4" id="email" placeholder="photo">
+            </div>
+
+
+
+            <a (click)="add()" class="w-100 mb-2 btn btn-lg rounded-4 btn-primary mt-4">update</a>
+            
+            
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

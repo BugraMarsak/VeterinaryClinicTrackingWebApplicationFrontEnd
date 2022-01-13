@@ -1,0 +1,32 @@
+
+<div class="modal modal-signin position-static d-block bg-secondary for-padding  " tabindex="-1" role="dialog" id="modalSignin">
+    <div class="modal-dialog pt-5" role="document">
+      <div class="modal-content rounded-5 shadow ">
+        <div class="modal-header p-5 pb-4 border-bottom-0">
+          <h2 class="fw-bold mb-0">Add Vaccination Card</h2>
+        </div>
+  
+        <div class="modal-body p-5 pt-0">
+          <form [formGroup]="addForm">
+            <div class="form-floating mb-3 mt-4">
+              <h5 class="col-lg-6">Vaccination Name:</h5>
+              <input formControlName="vaccinationName" type="text" class="form-control rounded-4" id="vaccinationName" placeholder="vaccinationName">
+            </div>
+            <div class="form-floating mb-3 mt-4">
+                <h5 class="col-lg-6">Vaccinated:</h5>
+                  <select formControlName="vaccinated" name="vaccinated" id="vaccinated" class="cselect">
+                    <option value="false">Not Vaccinated</option>
+                    <option value="true">Vaccinated</option>
+                  </select>
+              </div>
+
+
+
+            <a (click)="add()" class="w-100 mb-2 btn btn-lg rounded-4 btn-primary mt-4">Add</a>
+            
+            
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

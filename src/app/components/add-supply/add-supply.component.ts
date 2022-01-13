@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { SupplyService } from 'src/app/services/supply.service';
+import { TokenClaim } from 'src/app/services/tokenclaim.service';
 
 @Component({
   selector: 'app-add-supply',
@@ -11,26 +12,22 @@ import { SupplyService } from 'src/app/services/supply.service';
 export class AddSupplyComponent implements OnInit {
   addForm:FormGroup;
   addlgForm:FormGroup;
-  constructor(private formBuilder:FormBuilder,private toastrService:ToastrService,private supplyService:SupplyService) { }
+  constructor(private formBuilder:FormBuilder,private toastrService:ToastrService,private supplyService:SupplyService,private tokenClaim:TokenClaim) { }
 
   ngOnInit(): void {
     this.createAddForm()
   }
 
   createAddForm(){
-    this.addForm= this.formBuilder.group({
-      
-      productName:["",Validators.required],
-      unitInStock:["",Validators.required],
-      purchaseDate:["",Validators.required],
-      purchasePrice:["",Validators.required]
-    })
+    
     this.addlgForm= this.formBuilder.group({
       
       productName:["",Validators.required],
       unitInStock:["",Validators.required],
       purchaseDate:["",Validators.required],
-      purchasePrice:["",Validators.required]
+      purchasePrice:["",Validators.required],
+      userName:[this.tokenClaim.getName(),Validators.required],
+
     })
   }
   
@@ -49,6 +46,7 @@ export class AddSupplyComponent implements OnInit {
   }
 
   add(){
+
     if(this.addForm.valid){
       let supplyModel=Object.assign({},this.addForm.value);
       this.supplyService.add(supplyModel).subscribe(response=>{

@@ -2,3 +2,7 @@ table, th, td{
     border: 1.5px solid rgba(27, 25, 25, 0.664);
     border-collapse: collapse;
 }
+.mt{
+    margin-top: 2%;
+    margin-bottom: 2.5%;
+}

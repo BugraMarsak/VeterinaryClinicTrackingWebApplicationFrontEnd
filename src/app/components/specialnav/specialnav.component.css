@@ -1,0 +1,15 @@
+.custom-margin{
+    margin-left: 2rem;
+  }
+  .custom-margin-large{
+    margin-left: 20rem;
+  }
+  nav{
+    font-size: large;
+  }
+  .forcenter{
+    text-align: center;
+  }
+  .margin-top-r{
+    margin-left: 13rem;
+  }

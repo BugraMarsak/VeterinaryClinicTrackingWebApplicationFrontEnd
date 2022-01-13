@@ -18,6 +18,7 @@ export class PersonnelComponent implements OnInit {
   getAllPersonnel(){
     this.personnelService.getAll().subscribe(response=>{
       this.personnels = response.data
+
     })
   }
 }

@@ -1,24 +1,36 @@
-<div class="pt-4 pb-2">
-    <div class="container" >
-        <table class="table table-secondary table-hover">
-            <thead>
-              <tr>
-                <th scope="col">Product name</th>
-                <th scope="col">Unit in Stock</th>
-                <th scope="col">Purchase date</th>
-                <th scope="col">Purchase Price</th>
-                <th scope="col">Changes</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let supply of supplies">
-                <th scope="row">{{supply.productName}}</th>
-                <td>{{supply.unitInStock}}</td>
-                <td>{{supply.purchaseDate}}</td>
-                <td>{{supply.purchasePrice}}</td>
-                <td><svg xmlns="http://www.w3.org/2000/svg" (click)="delete(supply)" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-delete"><path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/><line x1="18" y1="9" x2="12" y2="15"/><line x1="12" y1="9" x2="18" y2="15"/></svg></td>
-              </tr>
-            </tbody>
-          </table>
+<div class="pt-4 pb-special " >
+  
+    <div class="container "  >
+      <a class="btn btn-outline-success mt-4 centered wfs mb-4" href="/supply-add">Add Supply</a>
+      <div class="table-responsive ">
+        
+          
+          <table class="table table-secondary table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">Product name</th>
+                  <th scope="col">Unit in Stock</th>
+                  <th scope="col">Purchase date</th>
+                  <th scope="col">Purchase Price</th>
+                  <th scope="col">person who added</th>
+                  <th scope="col">Changes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let supply of supplies">
+                  <th scope="row">{{supply.productName}}</th>
+                  <td>{{supply.unitInStock}}</td>
+                  <td>{{supply.purchaseDate}}</td>
+                  <td>{{supply.userName}}</td>
+                  <td>{{supply.purchasePrice}}</td>
+                  <td><a (click)="edit(supply.supplyId)" href="supply/edit"><svg xmlns="http://www.w3.org/2000/svg" class="me-4" viewBox="0 0 24 24" width="15" height="15"><path d="M22.853,1.148a3.626,3.626,0,0,0-5.124,0L1.465,17.412A4.968,4.968,0,0,0,0,20.947V23a1,1,0,0,0,1,1H3.053a4.966,4.966,0,0,0,3.535-1.464L22.853,6.271A3.626,3.626,0,0,0,22.853,1.148ZM5.174,21.122A3.022,3.022,0,0,1,3.053,22H2V20.947a2.98,2.98,0,0,1,.879-2.121L15.222,6.483l2.3,2.3ZM21.438,4.857,18.932,7.364l-2.3-2.295,2.507-2.507a1.623,1.623,0,1,1,2.295,2.3Z"/></svg></a>
+                    <svg xmlns="http://www.w3.org/2000/svg" (click)="delete(supply)" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-delete"><path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/><line x1="18" y1="9" x2="12" y2="15"/><line x1="12" y1="9" x2="18" y2="15"/></svg></td>
+                </tr>
+              </tbody>
+            </table>
+        </div>    
     </div>
 </div>
+
+
+

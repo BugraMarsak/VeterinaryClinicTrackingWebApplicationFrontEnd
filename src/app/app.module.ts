@@ -19,9 +19,23 @@ import { AboutComponent } from './components/about/about.component';
 import { HomeComponent } from './components/home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
-import { CompletedComponent } from './components/completed/completed.component';
-import { FailureComponent } from './components/failure/failure.component';
 import { VaccinationcardsearchComponent } from './components/vaccinationcardsearch/vaccinationcardsearch.component';
+import { SpecialnavComponent } from './components/specialnav/specialnav.component';
+import { RegisterComponent } from './components/register/register.component';
+import { AppointmentlistComponent } from './components/appointmentlist/appointmentlist.component';
+import { UserpageComponent } from './components/userpage/userpage.component';
+import { AnimalinfoComponent } from './components/animalinfo/animalinfo.component';
+import { AddanimalComponent } from './components/addanimal/addanimal.component';
+import { UpdateuserComponent } from './components/updateuser/updateuser.component';
+import { SupplyeditComponent } from './components/supplyedit/supplyedit.component';
+import { SurgdonesearchComponent } from './components/surgdonesearch/surgdonesearch.component';
+import { SurgdoneComponent } from './components/surgdone/surgdone.component';
+import { AddvaccinationcardComponent } from './components/addvaccinationcard/addvaccinationcard.component';
+import { AddsurgdoneComponent } from './components/addsurgdone/addsurgdone.component';
+import { VaccinationaddbyidComponent } from './components/vaccinationaddbyid/vaccinationaddbyid.component';
+import { SurgdoneaddbyidComponent } from './components/surgdoneaddbyid/surgdoneaddbyid.component';
+import { UpdatevacciantioncardComponent } from './components/updatevacciantioncard/updatevacciantioncard.component';
+import { UpdateanimalinfoComponent } from './components/updateanimalinfo/updateanimalinfo.component';
 
 @NgModule({
   declarations: [
@@ -37,9 +51,23 @@ import { VaccinationcardsearchComponent } from './components/vaccinationcardsear
     PersonnelComponent,
     AboutComponent,
     HomeComponent,
-    CompletedComponent,
-    FailureComponent,
-    VaccinationcardsearchComponent
+    VaccinationcardsearchComponent,
+    SpecialnavComponent,
+    RegisterComponent,
+    AppointmentlistComponent,
+    UserpageComponent,
+    AnimalinfoComponent,
+    AddanimalComponent,
+    UpdateuserComponent,
+    SupplyeditComponent,
+    SurgdonesearchComponent,
+    SurgdoneComponent,
+    AddvaccinationcardComponent,
+    AddsurgdoneComponent,
+    VaccinationaddbyidComponent,
+    SurgdoneaddbyidComponent,
+    UpdatevacciantioncardComponent,
+    UpdateanimalinfoComponent
   ],
   imports: [
     BrowserModule,

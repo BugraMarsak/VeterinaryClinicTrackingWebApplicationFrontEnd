@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ListResponseModel } from '../models/listResponseModel';
 import { ResponseModel } from '../models/responseModel';
+import { SingleResponseModel } from '../models/singleResponseModel';
 import { Supply } from '../models/supply';
 
 @Injectable({
@@ -25,5 +26,8 @@ export class SupplyService {
   update(supply:Supply):Observable<ResponseModel>{
     return this.httpClient.post<ResponseModel>(this.apiUrl+"Supply/update",supply);
   }
-
+  getById(Id:number) {
+    let newPath=this.apiUrl+"Supply/GetById?Id="+Id
+    return this.httpClient.get<SingleResponseModel<Supply>>(newPath);
+  }
 }

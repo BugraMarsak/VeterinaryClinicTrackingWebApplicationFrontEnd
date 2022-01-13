@@ -1,0 +1,60 @@
+<div class="container pt-4 pb-6">
+    <div class="main-body">
+          <div class="center">
+            <label for="appointmentTime">Appointment Time:</label>
+            <input class="bd me-4" type="Date" [(ngModel)]="appointmentTime" id="appointmentTime">
+            <a class="btn btn-info" (click)="getAppointmentByTime()">Get Appointment List</a>
+          </div>
+      
+          <div  class="row gutters-sm mt-5">
+            <div  class="col-md-4" *ngFor="let appointment of appointments" >
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <h6 class="mb-0">Zaman</h6>
+                    </div>
+                    <div class="col-sm-8 text-secondary">
+                      {{appointment.appointmentTime}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <h6 class="mb-0">Animal Id</h6>
+                    </div>
+                    <div class="col-sm-8 text-secondary">
+                      {{appointment.animalId}}
+                    </div>
+                  </div>                  
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <h6 class="mb-0">Appoint. Type</h6>
+                    </div>
+                    <div class="col-sm-8 text-secondary">
+                      {{appointment.appointmentType}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="center">
+                      <a class="btn btn-info " target="__blank" href="animalinfo/{{appointment.animalId}}">Get animal Details</a>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+
+              
+              
+
+            </div>
+                <div *ngIf="!control()">
+                  <h2 *ngIf="!text" class="center mt-5">Pick an appointment time </h2>
+                  <h2 *ngIf="text" class="center mt-5">No appointment on the specified date</h2>
+            </div>
+
+            
+        </div>
+    </div>
