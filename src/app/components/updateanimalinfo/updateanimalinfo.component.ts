@@ -43,6 +43,7 @@ export class UpdateanimalinfoComponent implements OnInit {
   get(id:number){
     this.animalInfoService.getByAnimalId(id).subscribe(response=>{
       this.updatefix(response.data.animalKind)
+      this.addForm.controls["id"].setValue(response.data.id) 
       this.addForm.controls["userId"].setValue(response.data.userId)
       this.addForm.controls["animalId"].setValue(response.data.animalId)
       this.addForm.controls["animalName"].setValue(response.data.animalName)
@@ -61,6 +62,7 @@ export class UpdateanimalinfoComponent implements OnInit {
   
   createAddForm(){
     this.addForm= this.formBuilder.group({
+      id:["",Validators.required],
       userId:["",Validators.required],
       animalId:["",Validators.required],
       animalName:["",Validators.required],

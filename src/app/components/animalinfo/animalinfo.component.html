@@ -3,6 +3,7 @@
 
       <div class="container mt-5 mb-5">
        <h3>Animal Id: {{animalInfo.animalId}}</h3> 
+       <h3>Animal Service Number: {{animalInfo.id}}</h3> 
         <div class="row no-gutters">
           
             <div class="col-md-4 col-lg-4"><img src="{{animalInfo.animalPhoto}}"></div>
@@ -36,7 +37,7 @@
                     <div class="p-3 bg-dark text-white row forcenter">
                       <div class="row">
                         
-                        <h6 class="col forcenter"><a class="btn text-white" href="update/animalinfo/{{animalInfo.animalId}}">Edit</a></h6>
+                        <h6 class="col forcenter"><a class="btn text-white" href="update/animalinfo/{{animalInfo.id}}">Edit</a></h6>
                         <h6 class="col forcenter"><a class="btn text-white" (click)="delete()" href="/user">Delete</a> </h6>
                       </div>
                       

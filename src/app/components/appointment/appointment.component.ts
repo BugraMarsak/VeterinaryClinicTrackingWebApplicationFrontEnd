@@ -66,7 +66,6 @@ export class AppointmentComponent implements OnInit {
 
 
   add(){
-    
     var newDate:Date =new Date(this.appointmentForm.get("appointmentTime").value) 
     var newhour:number= +this.test+3
     newDate.setHours(newhour)

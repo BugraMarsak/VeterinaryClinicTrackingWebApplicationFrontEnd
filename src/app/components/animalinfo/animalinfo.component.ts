@@ -95,6 +95,7 @@ export class AnimalinfoComponent implements OnInit {
   getSurgDone(id:number){
     this.surgDoneService.getById(id).subscribe(response=>{
       this.surgDones=response.data
+      console.log(response.data)
     })
   }
 
